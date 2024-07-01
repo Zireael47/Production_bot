@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block groupnames %}
+<div class="hr-nav-1 top-0">
+    <nav class="nav-container">
+        <a href="#!" class="nav-item" id = "floor_heating_name">Теплый пол</a>
+        <a href="#!" class="nav-item" id = "architectural_heating_name">Архитектурный обогрев</a>
+        <a href="#!" class="nav-item" id = "controllers_name">Терморегуляторы</a>  
+    </nav>
+</div>
+{% endblock groupnames %}
+{% block content %}
+    
+    {% for container in containers %}
+    <div class="container" id = {{container.id}}>
+        <div class="row row-cols-2 g-0">
+            {% for card in container.cards %}
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <label>
+                            <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target=#{{card.modal_fade_id}}>{{card.category}}</button>
+                            <img src={{card.image_url}} class="card-img-top" data-bs-target=#{{card.modal_fade_id}}/>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        
+
+            <!-- Модальное окно -->
+            <div class="modal fade" id={{card.modal_fade_id}} data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabelcat" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabelcat">{{card.category}}</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="product-info">{{card.info|safe}}</div>
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">{{card.code_type}}</th>
+                                            <th scope="col">Цена, руб</th>
+                                            <th scope="col">Кол-во</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for params in prices[card.category] %}
+                                        <tr>
+                                            <th scope="row">{{params.ord}}</th>
+                                            <td class="price">{{params.price}}</td>
+                                            <td>
+                                                <input type="number" min="0">
+                                            </td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        
+                            <div class="modal-footer">
+                                <div class="container-footer">
+                                    <div class="row">
+                                        <h6 class="count-header" unit = {{card.unit}}>Итого: 0 , 0 руб.</h6>
+                                    </div>
+                                    <button type="button" class="btn btn-danger" style="width:100%">Добавить в корзину</button>
+                                </div>
+                            </div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            {% endfor %}
+        </div>
+    </div> 
+    {% endfor %}
+    
+{% endblock content %}   
+{% block scripts %}
+        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+        <script src="https://telegram.org/js/telegram-web-app.js"></script>
+        <script src="/static/js/index.js"></script>
+{% endblock scripts%}

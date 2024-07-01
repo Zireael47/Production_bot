@@ -1,0 +1,7 @@
+"BotName":           "Bot1"
+"LogPath":           "bot.log"
+"FilePath":          "./data/files"
+"DBPath":            "./data/bot.db"
+"Token":             "Token"
+"WebAppUrl":         "https://adress.ru"
+"Url":               "https://t.me/bot"

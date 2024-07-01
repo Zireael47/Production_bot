@@ -1,0 +1,168 @@
+
+.center-cropped {
+    width: 80px; 
+    height: 50px; 
+    object-fit: cover;
+    object-position: 0% 0%; 
+    margin-left: 2px;
+}
+
+.container{
+    margin-top: 120px;
+    padding-bottom: 60px;
+}
+
+.input form-control me-1{
+    width: 120;
+}
+
+.d-flex{
+    align-items: center;
+}
+.d-flex h5{
+    margin-left: 10px;
+}
+
+.d-lg-none{
+    height: 5%;
+}
+.nav {
+    position: sticky;
+    top: 0px;
+}
+
+#order-navbar{
+    height: 40px;
+    margin: 10px;
+    margin-top: 60px;
+    z-index: 100;
+    width: 100%;
+    background-color: white;
+    align-items: center;
+}
+
+#secondNav{
+    position: sticky;
+    
+}
+
+.nav__item-icon {
+    stroke: rgb(213, 49, 39);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.hr-nav-1 {
+    margin-top: -10px;
+    margin-bottom: 0px;
+    height: 50px;
+    position: sticky;
+    z-index: 100;
+    overflow-x: auto;
+    background-color: #F8F9FA;
+    align-items: center;
+}
+
+.hr-nav-1 .nav-container {
+    overflow-x: auto;
+    overflow: auto;
+    white-space: nowrap;
+    max-width: 48em;
+    margin: 3px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.hr-nav-1 .nav-item {
+    display: inline-block;
+    padding: 8px 10px;
+    text-decoration: none;
+    color: black
+}
+
+#floor_heating_name{
+    color:rgb(213, 49, 39);
+}
+
+.card{
+    position: relative;
+    margin-top: 1%;
+    margin-left: 5%;
+    margin-right: 2%;
+    margin-bottom: 1%;
+    align-items: center;
+    height: 160px;
+}
+
+.card button{
+    position: absolute;
+    margin-top: -5%;
+    font-size:12px;
+    width: 100%;
+    align-items: center;
+}
+
+.card-img-top {
+    margin-top: 20%;
+    height: 100px;
+    width: 95%;
+   
+}
+
+.order-item {
+    padding:10px;
+    padding-bottom: 0px;
+    border-width: 1px;
+    box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11),
+                0 5px  15px 0 rgba(0,0,0,0.08);
+    border-style: solid;
+    border-radius: 0.5rem;
+    border-color: lightgray;
+    margin: 10px;
+}
+
+.btn-light{
+    font-weight: 700;
+    border: none !important;
+    background-color: transparent !important;
+    overflow: hidden;
+    width: 80%;
+    margin-top: -10px;
+    margin-left: -20%;
+}
+
+#container_architectural_heating_cards{
+    display: none;
+}
+
+#container_heaters_cards{
+    display: none;
+
+}
+
+#container_controllers_cards{
+    display: none;
+}
+
+input {
+    width: 100px;
+    min-width: 0;
+}
+
+#order-smth{
+    left: 25%;
+    bottom: 10%;
+    width: 50%;
+    position: fixed;
+    align-items: center;
+}
+
+#clear-order{
+    left: 65%;
+    bottom: 12.5%;
+    width: 50%;
+    position: fixed;
+    align-items: center;
+}
